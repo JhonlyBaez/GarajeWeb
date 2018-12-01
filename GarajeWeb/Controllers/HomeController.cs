@@ -15,7 +15,7 @@ namespace GarajeWeb.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Tienda()
         {
             ViewData["Message"] = "Your application description page.";
 
