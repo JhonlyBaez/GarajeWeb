@@ -5,16 +5,20 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
-        <ul class="nav navbar-nav navbar-right">
-            <li style="margin-top: 4px;">
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Mi cuenta</a>
-            </li>
-            <li>
-                <button type="submit" class="btn btn-outline-danger navbar-btn navbar-link">Salir</button>
-            </li>
-        </ul>
-    </form>
+<form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a style="margin-top: 4px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Mi cuenta <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Publicar oferta</a></li>
+                    <li><a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Perfil</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header"><button type="submit" class="btn btn-outline-link navbar-link">Salir</button></li>
+                </ul>
+        </li>
+    </ul>
+</form>
 }
 else
 {

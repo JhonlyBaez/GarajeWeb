@@ -30,7 +30,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="top: 5px;">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -44,7 +44,17 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="margin-top: 4px;">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Tienda">Tienda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Celulares</a></li>
+                            <li><a href="#">Accesorios</a></li>
+                            <li><a href="#">Laptops</a></li>
+                            <li><a href="#">Televisores</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Tienda">Todos</a></li>
+                        </ul>
+                    </li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Acerca de</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
@@ -55,7 +65,7 @@
     <partial name="_CookieConsentPartial" />
 
 
-        <br /><br /><br />
+        <br /><br />
         @RenderBody()
         <hr />
         <footer>
